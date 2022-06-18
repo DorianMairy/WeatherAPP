@@ -15,17 +15,20 @@ async function getWeatherByLocation(city) {
 
 function addWeatherToPage(data) {
   const name = (data.name);
+  const country = (data.sys.country);
   const temp = (data.main.temp);
   const windspeed = (data.wind.speed);
   const humidity = (data.main.humidity);
+  const fellslike = (data.main.feels_like);
   const weather = document.createElement("div");
   weather.classList.add("weather");
   weather.innerHTML = `
-        <p>${object.cod.message}</p>
-        <p>${name}</p>
+        <h1>${name}</h1>
+        <p><img width="300" height="200" src="http://www.geonames.org/flags/x/${country.toLowerCase()}.gif"></p>
         <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" />${temp}°C</h2>
-        <p>Vitesse du vent : <br>${Math.round(windspeed*3.6)} Km/h</p>
-        <p>Humidité : <br>${humidity}%</p>
+        <p>Température ressentie <br>${fellslike}°C</p>
+        <p>Vitesse du vent <br>${Math.round(windspeed*3.6)} Km/h</p>
+        <p>Humidité <br>${humidity}%</p>
     `;
 
   main.innerHTML = "";

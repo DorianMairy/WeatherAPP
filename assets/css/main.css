@@ -30,6 +30,7 @@ input:focus {
 }
 
 .weather {
+    margin-top: 50px;
     background-color: rgba(32, 32, 28, 0.77);
     font-size: 30px;
     text-align: center;
