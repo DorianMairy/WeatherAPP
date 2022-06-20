@@ -1,4 +1,4 @@
-// constante
+// constantes
 const apikey = "123573cc4ec236994ba2613961469c95";
 const main = document.getElementById("main");
 const form = document.getElementById("form");
